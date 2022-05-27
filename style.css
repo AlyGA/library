@@ -64,7 +64,7 @@ Lightest to Darkest
   align-items: center;
 }
 
-.buttons-container button {
+.buttons-container > button {
   height: 50px;
   width: 130px;
   border-radius: 20px;
@@ -80,6 +80,70 @@ Lightest to Darkest
 
 .buttons-container button:hover {
   background-color: #3e69c4;
+}
+
+.newButtonModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: #abc4ff;
+  width: 500px;
+  max-width: 80%;
+}
+
+.newButtonModal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modalNewHeader {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modalNewHeader > button {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: #748ec6;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modalNewHeader .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modalNewBody {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .footer {

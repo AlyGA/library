@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="buttons-container">
-          <button class="newButton">
+          <button data-modal-target="#newButtonModal" class="newButton">
             <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
               <path
                 fill="currentColor"
@@ -56,6 +56,25 @@
             </svg>
             Add New Book
           </button>
+          <div class="newButtonModal" id="newButtonModal">
+            <div class="modalNewHeader">
+              <div class="title">Add Book</div>
+              <button data-close-button class="closeButton">&times;</button>
+            </div>
+            <div class="modalNewBody">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+              possimus quis placeat excepturi a temporibus accusantium tenetur
+              praesentium assumenda voluptatem maxime doloribus deleniti
+              quisquam quam, saepe unde quo nisi quae sunt quasi iure. Minima
+              voluptatibus voluptates nostrum consequatur accusantium sapiente
+              dolores aspernatur odit fugiat laboriosam quaerat amet
+              perspiciatis accusamus, quis aliquid, recusandae modi vel quo
+              tenetur natus expedita. Quas placeat cupiditate nihil quos sed id
+              sint dolorum, reprehenderit pariatur corporis magni obcaecati
+              asperiores, modi repudiandae eius atque suscipit! Totam,
+              aspernatur!
+            </div>
+          </div>
           <button class="Support">
             <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
               <path
@@ -65,6 +84,7 @@
             </svg>
             Support
           </button>
+          <div id="overlay"></div>
         </div>
         <div class="footer">
           Created by
