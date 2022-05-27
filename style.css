@@ -1,0 +1,89 @@
+/* Color Scheme:
+Lightest to Darkest
+#edf2fb
+#d7e3fc
+#ccdbfd
+#c1d3fe
+#abc4ff
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fraunces", serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.7fr 2fr;
+  grid-row: 1fr;
+}
+
+.main-content {
+  background-color: #edf2fb;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #abc4ff;
+  min-height: 100vh;
+  grid-row: 1 / 1;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: grid;
+  grid-template-rows: 0.2fr 0.1fr 0.3fr 0.5fr;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.description p {
+  font-family: "Inria Serif", serif;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.description li {
+  padding-left: 30px;
+  list-style-type: none;
+}
+
+.buttons-container {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.buttons-container button {
+  height: 50px;
+  width: 130px;
+  border-radius: 20px;
+  background-color: #748ec6;
+  border: none;
+  color: #edf2fb;
+  display: grid;
+  padding: 5px;
+  grid-template-columns: 0.3fr 1fr;
+  justify-self: center;
+  align-items: center;
+}
+
+.buttons-container button:hover {
+  background-color: #3e69c4;
+}
+
+.footer {
+  justify-self: center;
+  align-self: center;
+  padding-bottom: 20px;
+}
