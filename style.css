@@ -27,6 +27,47 @@ Lightest to Darkest
   min-height: 100vh;
 }
 
+.libraryTable {
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  margin-top: 10%;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.libraryTable thead tr {
+  background-color: #abc4ff;
+  color: black;
+  text-align: left;
+  font-weight: bold;
+}
+
+.libraryTable th,
+.libraryTable td {
+  padding: 12px 15px;
+}
+
+.libraryTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.libraryTable tbody tr:nth-of-type(even) {
+  background-color: white;
+}
+
+.libraryTable tbody tr:last-of-type {
+  border-bottom: 2px solid #abc4ff;
+}
+
+.libraryTable tbody tr:hover {
+  color: #abc4ff;
+}
+
 .sidebar {
   background-color: #abc4ff;
   min-height: 100vh;
