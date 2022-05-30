@@ -108,17 +108,33 @@
               <button data-close-button class="closeButton">&times;</button>
             </div>
             <div class="modalNewBody">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
-              possimus quis placeat excepturi a temporibus accusantium tenetur
-              praesentium assumenda voluptatem maxime doloribus deleniti
-              quisquam quam, saepe unde quo nisi quae sunt quasi iure. Minima
-              voluptatibus voluptates nostrum consequatur accusantium sapiente
-              dolores aspernatur odit fugiat laboriosam quaerat amet
-              perspiciatis accusamus, quis aliquid, recusandae modi vel quo
-              tenetur natus expedita. Quas placeat cupiditate nihil quos sed id
-              sint dolorum, reprehenderit pariatur corporis magni obcaecati
-              asperiores, modi repudiandae eius atque suscipit! Totam,
-              aspernatur!
+              <form action="">
+                <div class="book-details">
+                  <div class="input-box">
+                    <span class="details">Author Name </span>
+                    <input type="text" name="authorName" id="" required />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Book Title </span>
+                    <input type="text" name="bookTitle" id="" required />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Number of Pages </span>
+                    <input type="number" name="pageNum" id="" required />
+                  </div>
+                  <div class="radio-details">
+                    <span class="details">Have you read this before? </span>
+                    <input type="radio" name="ifRead" id="yes" required />
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="ifRead" id="no" required />
+                    <label for="no">No</label>
+                  </div>
+                  <div class="submitOrClear">
+                    <input type="reset" value="Reset" />
+                    <input type="submit" />
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
           <button class="Support">

@@ -135,6 +135,8 @@ Lightest to Darkest
   background-color: #abc4ff;
   width: 500px;
   max-width: 80%;
+  height: 400px;
+  max-height: 80%;
 }
 
 .newButtonModal.active {
@@ -168,6 +170,18 @@ Lightest to Darkest
 
 .modalNewBody {
   padding: 10px 15px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+form div {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
 }
 
 #overlay {
