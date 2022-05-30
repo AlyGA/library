@@ -181,7 +181,16 @@ form div {
   margin-bottom: 20px;
 }
 
-form input {
+form #submit,
+form #reset {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #748ec6;
 }
 
 #overlay {
