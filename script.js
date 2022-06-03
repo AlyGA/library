@@ -98,13 +98,25 @@ function updateTable(author, title, page, status) {
   const tablePageData = document.createElement("td");
   const tableStatusData = document.createElement("td");
   const tableDelData = document.createElement("td");
+  //TODO: Allow checkbox function to work so that when the 'yes' button is pressed, it will be check, or if it's 'no', it will not be checked
+  const yesChecked = document.createElement("input");
+  yesChecked.type = "checkbox";
+  yesChecked.checked = "true";
+  const noChecked = document.createElement("input");
+  noChecked.type = "checkbox";
+  noChecked.checked = "true";
   const deleteButton = document.createElement("button");
 
   bodyOfTable.append(tableRow);
   tableAuthorData.textContent = author;
   tableTitleData.textContent = title;
   tablePageData.textContent = page;
-  tableStatusData.textContent = status;
+  if (status.value == "Yes") {
+    tableStatusData.append(yesChecked);
+  } else {
+    tableStatusData.append(noChecked);
+  }
+  // tableStatusData.textContent = status;
   deleteButton.innerHTML = `<svg style="width: 24px; height: 24px" viewBox="0 0 24 24"><path
     fill="currentColor"
     d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
