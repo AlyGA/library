@@ -16,6 +16,8 @@ let pageNumber;
 let yesButton;
 let noButton;
 let readingStatus;
+const bodyOfTable = document.querySelector("tbody");
+
 // Opening the modal
 openModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -85,5 +87,34 @@ function Book(author, title, pageNumber, readStatus) {
 function addBookToLibrary(author, title, page, status) {
   newBook = new Book(author, title, page, status);
   myLibrary.push(newBook);
-  console.log(newBook);
+  updateTable(author, title, page, status);
+}
+
+// Update the book's information to the table.
+function updateTable(author, title, page, status) {
+  const tableRow = document.createElement("tr");
+  const tableAuthorData = document.createElement("td");
+  const tableTitleData = document.createElement("td");
+  const tablePageData = document.createElement("td");
+  const tableStatusData = document.createElement("td");
+  const tableDelData = document.createElement("td");
+  const deleteButton = document.createElement("button");
+
+  bodyOfTable.append(tableRow);
+  tableAuthorData.textContent = author;
+  tableTitleData.textContent = title;
+  tablePageData.textContent = page;
+  tableStatusData.textContent = status;
+  deleteButton.innerHTML = `<svg style="width: 24px; height: 24px" viewBox="0 0 24 24"><path
+    fill="currentColor"
+    d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+  />
+</svg>`;
+
+  tableRow.append(tableAuthorData);
+  tableRow.append(tableTitleData);
+  tableRow.append(tablePageData);
+  tableRow.append(tableStatusData);
+  tableDelData.append(deleteButton);
+  tableRow.append(tableDelData);
 }
