@@ -17,6 +17,7 @@ let yesButton;
 let noButton;
 let readingStatus;
 const bodyOfTable = document.querySelector("tbody");
+const delButton = document.querySelectorAll(".deleteButton");
 
 // Opening the modal
 openModalButtons.forEach((button) => {
@@ -98,24 +99,25 @@ function updateTable(author, title, page, status) {
   const tablePageData = document.createElement("td");
   const tableStatusData = document.createElement("td");
   const tableDelData = document.createElement("td");
-  //TODO: Allow checkbox function to work so that when the 'yes' button is pressed, it will be check, or if it's 'no', it will not be checked
-  const yesChecked = document.createElement("input");
-  yesChecked.type = "checkbox";
-  yesChecked.checked = "true";
-  const noChecked = document.createElement("input");
-  noChecked.type = "checkbox";
-  noChecked.checked = "true";
+
+  let statusCheck = document.createElement("input");
+  statusCheck.type = "checkbox";
   const deleteButton = document.createElement("button");
+  deleteButton.classList.add("deleteButton");
+
+  //When the 'yes' button is pressed, it will be check, or if it's 'no', it will not be checked
+  if (status == "Yes") {
+    statusCheck.checked = true;
+    tableStatusData.append(statusCheck);
+  } else if (status == "No") {
+    tableStatusData.append(statusCheck);
+  }
 
   bodyOfTable.append(tableRow);
   tableAuthorData.textContent = author;
   tableTitleData.textContent = title;
   tablePageData.textContent = page;
-  if (status.value == "Yes") {
-    tableStatusData.append(yesChecked);
-  } else {
-    tableStatusData.append(noChecked);
-  }
+  tableStatusData.append(statusCheck);
   // tableStatusData.textContent = status;
   deleteButton.innerHTML = `<svg style="width: 24px; height: 24px" viewBox="0 0 24 24"><path
     fill="currentColor"
@@ -130,3 +132,10 @@ function updateTable(author, title, page, status) {
   tableDelData.append(deleteButton);
   tableRow.append(tableDelData);
 }
+
+// For the delete button
+// delButton.forEach((button) => {
+//   button.addEventListener("click", () => {
+//     bodyOfTable.remove();
+//   });
+// });
