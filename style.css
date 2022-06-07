@@ -182,7 +182,7 @@ form div {
 }
 
 form #submit,
-form #reset {
+form #resetButton {
   all: unset;
   width: 100px;
   height: 30px;

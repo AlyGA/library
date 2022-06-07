@@ -71,6 +71,8 @@ document.querySelector("#submit").addEventListener("click", function (event) {
     readStatus = "No";
   }
   addBookToLibrary(authorName, bookTitle, pageNumber, readStatus);
+
+  document.getElementById("userForm").reset();
 });
 
 // Below is the function defining the book class and array.
@@ -132,10 +134,3 @@ function updateTable(author, title, page, status) {
   tableDelData.append(deleteButton);
   tableRow.append(tableDelData);
 }
-
-// For the delete button
-// delButton.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     bodyOfTable.remove();
-//   });
-// });
