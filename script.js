@@ -133,4 +133,10 @@ function updateTable(author, title, page, status) {
   tableRow.append(tableStatusData);
   tableDelData.append(deleteButton);
   tableRow.append(tableDelData);
+
+  // Grab all the table rows and add a unique index
+  const tablerows = document.querySelectorAll("tr");
+  tablerows.forEach((tablerows, i) => tablerows.setAttribute("data-index", i));
 }
+
+//TODO: Create the delete function that will delete the item in the array by giving them a data-attribute that corresponds to the index of the library array
