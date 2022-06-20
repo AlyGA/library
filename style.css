@@ -68,6 +68,10 @@ Lightest to Darkest
   color: #abc4ff;
 }
 
+tbody #deleteButton {
+  /*Empty, will possibly add styling to button later*/
+}
+
 .sidebar {
   background-color: #abc4ff;
   min-height: 100vh;

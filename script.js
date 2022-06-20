@@ -1,10 +1,3 @@
-// TODO: For the layout of the main content screen, make a table and style it nicely. Then, when the modal is prompted, make sure the modal asks for name, title, number of pages, and make a button of if it has been read or not. After that, hit submit. On each row of the column there should be:
-// -- Name of Author (requirements: more than two letters must be typed. And, there can be no numbers)
-// -- Title (requirements: more than two letters)
-// -- Number of Pages (requirements: numbers ONLY. Try to get the one where users can choose numbers by scrolling up and down)
-// -- Have read or not (requirements: In the form, this should just be a checkbox button. But in the actual table, it should be a button that can switch on and off.)
-// -- Delete button (requirements: it should ONLY delete the row that has been chosen)
-
 // Retrieving all items for the modal buttons
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
@@ -116,11 +109,13 @@ function updateTable(author, title, page, status) {
   }
 
   bodyOfTable.append(tableRow);
+  tableRow.classList.add("tableBody");
   tableAuthorData.textContent = author;
   tableTitleData.textContent = title;
   tablePageData.textContent = page;
   tableStatusData.append(statusCheck);
   // tableStatusData.textContent = status;
+  deleteButton.setAttribute("class", "deleteButton");
   deleteButton.innerHTML = `<svg style="width: 24px; height: 24px" viewBox="0 0 24 24"><path
     fill="currentColor"
     d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
@@ -134,9 +129,14 @@ function updateTable(author, title, page, status) {
   tableDelData.append(deleteButton);
   tableRow.append(tableDelData);
 
-  // Grab all the table rows and add a unique index
-  const tablerows = document.querySelectorAll("tr");
-  tablerows.forEach((tablerows, i) => tablerows.setAttribute("data-index", i));
+  const bodyData = document.querySelectorAll(".tableBody");
+  bodyData.forEach((tablerows, i) => tablerows.setAttribute("data-index", i));
+
+  deleteButton.addEventListener("click", () => {
+    tableRow.remove();
+    myLibrary.splice([tableRow.dataset.index], 1);
+    tableRow.removeAttribute("data-index");
+  });
 }
 
-//TODO: Create the delete function that will delete the item in the array by giving them a data-attribute that corresponds to the index of the library array
+console.log(myLibrary);
