@@ -113,30 +113,38 @@ function updateTable(author, title, page, status) {
   tableAuthorData.textContent = author;
   tableTitleData.textContent = title;
   tablePageData.textContent = page;
-  tableStatusData.append(statusCheck);
-  // tableStatusData.textContent = status;
-  deleteButton.setAttribute("class", "deleteButton");
-  deleteButton.innerHTML = `<svg style="width: 24px; height: 24px" viewBox="0 0 24 24"><path
+
+  // Check if any values are empty. If there are empty values, make a popup message. If not, append it.
+  if (
+    tableAuthorData.textContent === "" ||
+    tableTitleData.textContent === "" ||
+    tablePageData.textContent === ""
+  ) {
+    window.alert("Please make sure all values are filled!");
+  } else {
+    tableStatusData.append(statusCheck);
+    deleteButton.setAttribute("class", "deleteButton");
+    deleteButton.innerHTML = `<svg style="width: 24px; height: 24px" viewBox="0 0 24 24"><path
     fill="currentColor"
     d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
   />
 </svg>`;
 
-  tableRow.append(tableAuthorData);
-  tableRow.append(tableTitleData);
-  tableRow.append(tablePageData);
-  tableRow.append(tableStatusData);
-  tableDelData.append(deleteButton);
-  tableRow.append(tableDelData);
+    tableRow.append(tableAuthorData);
+    tableRow.append(tableTitleData);
+    tableRow.append(tablePageData);
+    tableRow.append(tableStatusData);
+    tableDelData.append(deleteButton);
+    tableRow.append(tableDelData);
 
-  const bodyData = document.querySelectorAll(".tableBody");
-  bodyData.forEach((tablerows, i) => tablerows.setAttribute("data-index", i));
+    const bodyData = document.querySelectorAll(".tableBody");
+    bodyData.forEach((tablerows, i) => tablerows.setAttribute("data-index", i));
 
-  deleteButton.addEventListener("click", () => {
-    tableRow.remove();
-    myLibrary.splice([tableRow.dataset.index], 1);
-    tableRow.removeAttribute("data-index");
-  });
+    // Listener event when a row is removed
+    deleteButton.addEventListener("click", () => {
+      tableRow.remove();
+      myLibrary.splice([tableRow.dataset.index], 1);
+      tableRow.removeAttribute("data-index");
+    });
+  }
 }
-
-console.log(myLibrary);
