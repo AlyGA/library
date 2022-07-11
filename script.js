@@ -71,12 +71,14 @@ document.querySelector("#submit").addEventListener("click", function (event) {
 // Below is the function defining the book class and array.
 let myLibrary = [];
 
-// Book Constructor
-function Book(author, title, pageNumber, readStatus) {
-  this.author = author;
-  this.title = title;
-  this.pageNumber = pageNumber;
-  this.readStatus = readStatus;
+// Book class
+class Book {
+  constructor(author, title, pageNumber, readStatus) {
+    this.author = author;
+    this.title = title;
+    this.pageNumber = pageNumber;
+    this.readStatus = readStatus;
+  }
 }
 
 // Add the book to the array
